@@ -5,7 +5,7 @@ messaging channel. The app side of the connection is managed by the `WebShellApp
 
 On connection (immediately after the app is loaded), the app sends  to the shell its manifest, which consists of various meta data about the app and the description of its capabilities according to this API.
 
-After connection, the app receives commands from the shell
+After connection, the app receives commands from the shell, which it executes and returns the resuls, or throws an error. 
 
 ## Manifest
 ````js
@@ -24,7 +24,7 @@ After connection, the app receives commands from the shell
           String extension, 
           String type,
           String encoding,
-          Boolean create,
+          Boolean new,
           Boolean open,
           Boolean save
         }
@@ -44,7 +44,7 @@ After connection, the app receives commands from the shell
   * You can specify several extensions, space-separated. 
   * Use `*` for any mime type, or e.g. `text/*˙ for any text mime type.
   * The first explicitly specified type will be used when saving files. If it isn't supplied, the app will not be able to save files in this format,
-* `create`
+* `new`
   * can this app create this file format?
 * `open`
   * can this app open this file format?
