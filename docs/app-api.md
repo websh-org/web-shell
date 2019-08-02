@@ -20,7 +20,7 @@ After connection, the app receives commands from the shell, which it executes an
     Object file: {
       Object formats: {
         Object "format-id": {
-          String description, 
+          String name, 
           String extension, 
           String type,
           String encoding,
@@ -34,7 +34,7 @@ After connection, the app receives commands from the shell, which it executes an
 }
 ````
 ### File formats details:
-* `description` - defaults to `"[format-id] file"`
+* `name` - defaults to `"[format-id] file"`
 * `extension` - defaults to `"*"`
   * You can specify several extensions, space-separated, without leading dots. 
   * Use `*` for any extension.
