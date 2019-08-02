@@ -1,5 +1,12 @@
 # WebShell App API
 
+The connection between the app (in a sandboxed iframe) and the shell (in the parent window) is established through an async-enabled
+messaging channel. The app side of the connection is managed by the `WebShellApp` object from the `@websh/web-shell-app` package.
+
+On connection (immediately after the app is loaded), the app sends  to the shell its manifest, which consists of various meta data about the app and the description of its capabilities according to this API.
+
+After connection, the app receives commands from the shell
+
 ## Manifest
 ````js
 {
@@ -44,14 +51,22 @@
 * `save`
   * can this app save this file format?
 * `encoding`
-  * The encoding to be used when transferring this format. The valid values are `"text"`, `"base64"`, `"binary"` and `"blob"`.
+  * The encoding to be used when transferring this format. The valid values are:
+    * `"text"` - The content is text and will be transfered as a string.
+    * `"json"` - The content is JSON text and will be transfered as any JSONable value.
+    * `"base64"` - The content is binary and will be transfered as a base64-encoded string.
+    * `"binary"` - The content is binary and will be transferred as a `UInt8Array` buffer.
+    * `"blob"` - The content is binary and will be transferred as a blob object.
+    
+  
   * If `binary` or `blob` is used, the ownership of the content will be transferred and e.g. no longer be available in the app after `file-save`.
   
 ## Commands
 
-### `file-open`
+### file-open
+The app receives the content of the file to be opened, as well as its extension and the ID of its format (this will be one of the formats specified in the app's manifest).
 
-### args
+#### args
 ````js
 {
   String extension,
@@ -61,24 +76,24 @@
 ````
 * The type of `content` depends on the encoding specified in the manifest.
 
-### expected response
+#### expected response
 
 ````js
 "OK"
 ````
 
-### `file-save`
+### file-save
+The app receives the format and the extension of the file that is to be saved, and returns the content of the file that will be saved. 
 
-### args
+#### args
 ````js
 {
   String extension,
   String format
 }
 ````
-* The type of `content` depends on the encoding specified in the manifest.
 
-### expected response
+#### expected response
 
 ````js
 {
@@ -87,16 +102,17 @@
 ````
 * The expected type of `content` depends on the encoding specified in the manifest.
 
-## `file-create`
+### file-new
+The app receives the format of the file that is to be created. 
 
-### args
+#### args
 ````js
 {
   String format
 }
 ````
 
-### expected response
+#### expected response
 
 ````js
 "OK"
