@@ -1,22 +1,10 @@
-# WebShell App API
 
-The connection between the app (in a sandboxed iframe) and the shell (in the parent window) is established through an async-enabled
-messaging channel. The app side of the connection is managed by the `WebShellApp` object from the `@websh/web-shell-app` package.
-
-On connection (immediately after the app is loaded), the app sends  to the shell its manifest, which consists of various meta data about the app and the description of its capabilities according to this API.
-
-After connection, the app receives commands from the shell, which it executes and returns the resuls, or throws an error. 
-
-## Manifest
+## API Manifest
 ````js
 {
-  String name,
-  String description,
-  String version,
-  String author,
-  String docs, // Documentation URL
-  String icon, // Icon url
+  ...
   Object api: {
+    ...
     Object file: {
       Object formats: {
         Object "format-id": {
