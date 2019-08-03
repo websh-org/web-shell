@@ -1,6 +1,11 @@
 ## WebShell
 
-The WebShell project aims to define and implement a new secure dataflow and the accompanying APIs for allowing users to use their files in Web apps without authorizing the apps to access the user's file storage. At its core, WebShell consists of a container single-page application which can open remote components (primarily apps and file-system adapters) in sandboxed iframes and communicate with them through HTML5 message channels using the defined APIs. WebShell provides for file operations and the required UI (file menus, toolbars, dialogs) to support the familiar file operations (new, open, save, etc.) while apps merely implement serialization and deserialization of an individual file's content, after the user's explicit request. The project will build a fully-featured WebShell Desktop container, as well as a minimal WebShell container for testing and easy deployment of single apps. In addition, we will integrate a starter set of editor apps for common file types and a starter set of file system adapters, concentrating primarily on self-hosting and non-commercial web storage solutions like remotestorage.io and Solid storage.
+The WebShell project aims to define and implement a new secure dataflow and the accompanying APIs for allowing users to use their files in Web apps without authorizing the apps to access the user's file storage. At its core, WebShell consists of a container single-page application which can open remote components (primarily apps and file-system adapters) in sandboxed iframes and communicate with them through HTML5 message channels using the defined APIs. 
+
+WebShell provides for file operations on local and remote file storages,  as well as all the needed UI (file menus, toolbars, dialogs) to support the familiar file operations (new, open, save, etc.) while apps merely implement serialization and deserialization of an individual file's content, after the user's explicit request. 
+
+The project will build a fully-featured WebShell Desktop container, as well as a minimal WebShell container for testing and easy deployment of single apps. In addition, we will integrate a starter set of editor apps for common file types and a starter set of file system adapters, concentrating primarily on non-commercial web storage solutions and self-hosting.
+
 
 ## Why does this actually matter to end users?
 
