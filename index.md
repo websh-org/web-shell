@@ -1,8 +1,10 @@
 
 
 ## Docs
-* [WebShell App API](app-api) - The app 
+* [WebShell App API](app-api) - The API for WebShell apps.
+
 ## Repos
+
 ### Core
 * [web-shell-app](https://github.com/websh-org/web-shell-app) - The JS library for WebShell apps. Use this to connect an app to WebShell.
 * [app-controller](https://github.com/websh-org/app-controller) - WebShell uses this to connect to an app in an iframe.
