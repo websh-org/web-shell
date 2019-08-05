@@ -1,4 +1,4 @@
-# shell API
+# Shell API
 The shell object is the central hub of WebShell. It contains commands for all operations that are available to UI developers. WebShell and all its internal components can be controlled only through the shell API. 
 
 > What about state? UIs need access to the state of various components to correctly display the EU. Both event-driven and reactivity-driven state reporting should be supported.
