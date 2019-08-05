@@ -25,8 +25,8 @@ Command "app-close" { String appid } => "OK"
 
 Error "app-bad-appid" { Strint appid } 
 ````
-- [ ] Call `app-close` on the app controller.
-- [ ] If successfull, call `app-unload` on the controller.
+> - [ ] Call `app-close` on the app controller.
+> - [ ] If successfull, call `app-unload` on the controller.
 
 ### app-unload
 Force unload an app.
