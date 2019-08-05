@@ -22,11 +22,11 @@ Error "app-http-error" { Number status, String reason }
 Ask the app to close nicely. 
 ````js
 Command "app-close" { String appid } => "OK"
-- [ ] Call `app-close` on the app controller.
-- [ ] If successfull, call `app-unload` on the controller.
 
 Error "app-bad-appid" { Strint appid } 
 ````
+- [ ] Call `app-close` on the app controller.
+- [ ] If successfull, call `app-unload` on the controller.
 
 ### app-unload
 Force unload an app.
