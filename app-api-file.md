@@ -1,4 +1,7 @@
+# App API: File
+> **Implemented in WebShell apps, by app developers, using the `WebShellApp` object .**
 
+Supports file operations in WebShell apps.
 ## API Manifest
 ````js
 {
@@ -9,9 +12,9 @@
       Object formats: {
         Object "format-id": {
           String name, 
-          String extension, 
-          String type,
-          String encoding,
+          String extension = "*", 
+          String type = "*/*",
+          String encoding = "text",
           Boolean new,
           Boolean open,
           Boolean save
@@ -52,56 +55,30 @@
 ## Commands
 
 ### file-open
-The app receives the content of the file to be opened, as well as its extension and the ID of its format (this will be one of the formats specified in the app's manifest).
-
-#### args
+The app receives the content of the file to be opened, as well as its extension and the ID of its format (this will be one of the formats specified in the app's manifest). The type of `content` depends on the encoding specified in the manifest.
 ````js
-{
-  String extension,
-  String format,
-  content
-}
-````
-* The type of `content` depends on the encoding specified in the manifest.
+Command "file-open" { String extension, String format, content } => "OK"
 
-#### expected response
-
-````js
-"OK"
+Error "file-bad-file" { String reason } 
+Error "file-bad-format" { String format }
 ````
 
 ### file-save
-The app receives the format and the extension of the file that is to be saved, and returns the content of the file that will be saved. 
-
-#### args
-````js
-{
-  String extension,
-  String format
-}
-````
-
-#### expected response
+The app receives the format and the extension of the file that is to be saved, and returns the content of the file that will be saved. The expected type of `content` depends on the encoding specified in the manifest. The default mime type specified in the format in the manifest will be used for the saved file.
 
 ````js
-{
-  content
-}
+Command "file-save" { String extension,  String format } => { content }
+
+Error "file-bad-format" { String format }
 ````
-* The expected type of `content` depends on the encoding specified in the manifest.
+
 
 ### file-new
 The app receives the format of the file that is to be created. 
 
-#### args
 ````js
-{
-  String format
-}
+Command "file-new" { String format } => "OK"
+
+Error "file-bad-format" { String format }
 ````
 
-#### expected response
-
-````js
-"OK"
-````

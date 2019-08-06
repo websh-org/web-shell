@@ -1,5 +1,13 @@
 # WebShell App API
 
+> **Implemented in WebShell apps, by app developers, using the `WebShellApp` object .**
+
+This document describes the API that a webpage needs to implement to be considered a WebShell app. 
+
+This is distinct from the App Controller API, which is the API of the WebShell component that manages the connection to an WebShell app loaded in an iframe. 
+
+## How it works
+
 The connection between the app (in a sandboxed iframe) and the shell (in the parent window) is established through an async-enabled
 messaging channel. The app side of the connection is managed by the `WebShellApp` object from the `@websh/web-shell-app` package.
 
@@ -9,11 +17,12 @@ After connection, the app receives commands from the shell, which it executes an
 
 The app can also send events to the shell. Use `WebShellApp.trigger` in the app to send an event.
 
-Commands, expected results, errors and events are defined in various app APIs. For each API that it supports, the app must include an entry in the `.api` object in its manifest, with contents as specified for each app API.
+Commands, expected results, errors and events are defined in various app APIs. 
 
-## Manifest
+## App Manifest
+
 ````js
-{
+WebShellApp.manifest({
   String name,
   String description,
   String version,
@@ -23,7 +32,33 @@ Commands, expected results, errors and events are defined in various app APIs. F
   Object api: {
     ...
   }
-}
+})
 ````
+For each API that it supports, the app must include an entry in the `.api` object in its manifest, formatted as specified in each app API.
+## Commands
+
+Commands are sent from the shell to the app. To register a command handler in the app, use e.g.
+````js
+WebShellApp.command('test-echo', function ({ text }) {
+  if (text === undefined) {
+    WebShellApp.throw("command-bad-arguments",{ reason: "must supply text" });
+  }
+  return { text }
+})
+````
+Handler functions should return the results as described in each app API. If an error occurrs and the result can not be returned, an error should be thrown. Errors should be thrown using WebShellApp.throw:
+````js
+WebShellApp.throw(error,data);
+````
+## Errors
+Errors are described in each app API. In addition to those errors, the following may be thrown if more specific errors don't apply.
+
+````js
+Error "command-bad-arguments" { String reason }
+Error "command-not-allowed" { String reason }
+Error "command-failed" { String reason }
+Error "command-internal-error" { String reason }
+````
+
 ## App APIs
-* [file](app-api-file)
+* [App API: File](app-api-file)

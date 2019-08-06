@@ -47,10 +47,11 @@ Command "app-api-call" { String api, String cmd, Object args } => [see docs for 
 ````
 
 ## FS Volumes
+
 ### fs-volume-mount
 Open a FS adapter in an iframe and connect it to the file system.
 ````js
-Command "fs-volume-add" { String url, HTMLIframeElement iframe } => { String vid }
+Command "fs-volume-mount" { String url, HTMLIframeElement iframe } => { String vid }
 
 Error "fs-volume-already-mounted" { vid }
 ````
@@ -65,7 +66,7 @@ Error "fs-volume-already-mounted" { vid }
 ### fs-volume-umount
 Ask the FS volume to disconnect nicely. 
 ````js
-Command "fs-volume-disconnect" { String vid } => "OK"
+Command "fs-volume-umount" { String vid } => "OK"
 
 Error "fs-volume-not-mounted" { vid }
 ````
@@ -77,22 +78,22 @@ Error "fs-volume-not-mounted" { vid }
 ### fs-volume-umount-force
 Force unload an app.
 ````js
-Command "app-unload" { String appid } => "OK"
+Command "fs-volume-umount-force" { String appid } => "OK"
 
-Error "app-bad-appid" { String appid }
+Error "fs-volume-not-mounted" { String appid }
 ````
 > - [ ] Call `fs-volume-umount-force` on the FS.
 > - [ ] Call `fs-adapter-unload` on the FS adapter controller.
 
-## FS Operations
-FS operations are passed to the FS. See Fyle System API for details.
-> FS operations should probably support multiple encodings, to make it easier for UI developers.
+## FS File Operations
+File operations are passed to the FS. See Fyle System API for details.
+> File operations should probably support multiple encodings, to make it easier for UI developers.
 > Recoding should be done in one place, either here or in the FS.
 
-### fs-get 
+### fs-file-get 
 Get information for a path in the FS, possibly including the content.
 ````js
-Command "fs-get" { 
+Command "fs-file-get" { 
   String path, 
   Object include: { 
     Boolean parent, 
@@ -105,10 +106,10 @@ Error "fs-not-found" { String path }
 Error "fs-access-denied" { String path }
 ````
 
-### fs-create
+### fs-file-create
 Create a named file at a path in the FS.
 ````js
-Command "fs-create" { 
+Command "fs-file-create" { 
   String parentpath, 
   String name,
   String type,
@@ -125,10 +126,10 @@ Error "fs-access-denied" { String path }
 ````
 
 
-### fs-update
+### fs-file-update
 Update the content of a file at a path in the FS.
 ````js
-Command "fs-update" { 
+Command "fs-file-update" { 
   String path, 
   String type,
   ArrayBuffer content,
