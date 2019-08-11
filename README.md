@@ -1,1 +1,1 @@
-See https://websh-org.github.io/
+See http://websh.org
