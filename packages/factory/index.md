@@ -1,6 +1,6 @@
 # factory
 
-**https://github.com/websh-org/factory**
+**[https://github.com/websh-org/factory](https://github.com/websh-org/factory)**
 
 The component factory for WebShell, featuring multiple inheritance and and extendable building system.
 
