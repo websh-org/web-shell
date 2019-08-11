@@ -52,7 +52,7 @@ Must be an object. It can have the following properties:
   </dd><dt>
     public
   </dt><dd>
-    An object containing the component's public members. These will be accessable under `this.public` in the component's methods, and under ``.
+    An object containing the component's public members. These will be accessable under `this.public` in the component's methods.
   </dd></dl>
 </dd></dl>
 
