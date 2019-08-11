@@ -1,5 +1,23 @@
 # factory
+
+**https://github.com/websh-org/factory**
+
 The component factory for WebShell, featuring multiple inheritance and and extendable building system.
+
+## Contents
+* [Synopsis](#synopsis)
+* [Basic usage](#basic-usage)
+  + [Registering a component type](#registering-a-component-type)
+  + [Creating a component](#creating-a-component)
+  + [Inheriting component types](#inheriting-component-types)
+    - [Adding members](#adding-members)
+    - [Overriding members](#overriding-members)
+    - [Adding init functions](#adding-init-functions)
+  + [Multiple inheritance](#multiple-inheritance)
+    - [Creating components with multiple types](#creating-components-with-multiple-types)
+    - [Inheriting multiple types in a type.](#inheriting-multiple-types-in-a-type)
+* [Extending the factory with custom builders](#extending-the-factory-with-custom-builders)
+  + [Advanced builders](#advanced-builders)
 
 ## Synopsis
 ````bash
@@ -7,6 +25,9 @@ $ npm install @websh/factory
 ````
 ````js
 import { register, create } from "@websh/factory";
+
+register("my-type", { ... });
+const compontent = create("my-type", { ... })
 ````
 
 ## Basic usage
