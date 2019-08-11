@@ -128,6 +128,7 @@ test(
 );
 ````
 > Inheritence order: `hello`, `ask`
+
 #### Overriding members
 You can override `public` and `private` members of the inherited type:
 
