@@ -1,3 +1,5 @@
+[packages](..) / **factory**
+
 # @websh/factory
 
 **[https://github.com/websh-org/factory](https://github.com/websh-org/factory)**

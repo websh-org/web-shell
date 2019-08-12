@@ -1,3 +1,5 @@
+[packages](..) / **factory**
+
 # @websh/bios
 
 **[https://github.com/websh-org/bios](https://github.com/websh-org/bios)**
