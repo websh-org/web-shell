@@ -2,10 +2,15 @@
 
 ## 0.1 - Core
 * Core: Async Message Channel
+  * see [@websh/remote-master-port](/packages/remote-master-port) and [@websh/remote-master-port](/packages/remote-slave-port)
 * Core: App Controler
+  * see [src/app-controller.mjs](https://github.com/websh-org/shell/blob/master/src/app-controller.mjs) at [@websh/shell](https://github.com/websh-org/shell)
 * Core: JS Library For Apps
+  * see [@websh/web-shell-app](/packages/remote-master-port) 
 * App API: App Manifest
+  * see [App API](/app-api)
 * App API: Open File, Save File, New File
+  * see [App API: File](/app-api-file)
 
 ## 0.2 - Single App Shell
 * Single App Shell: Publish App Sandbox
