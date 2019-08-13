@@ -1,4 +1,4 @@
-[packages](..) / **factory**
+[websh.org](/) / [packages](..) / **factory**
 
 # @websh/factory
 
