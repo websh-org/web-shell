@@ -4,10 +4,10 @@
 # WebShell Packages
 
 ## Shell-side
-* [@websh/factory](remote-master-port)
+* [@websh/remote-master-port](remote-master-port)
 * [@websh/factory](factory)
 * [@websh/bios](bios)
 
 ## App-side
-* [@websh/bios](remote-slave-port)
-* [@websh/bios](web-shell-app)
+* [@websh/remote-slave-port](remote-slave-port)
+* [@websh/web-shell-app](web-shell-app)
