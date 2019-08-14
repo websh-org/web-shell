@@ -110,7 +110,7 @@ register('hello', {
 Use `create(type, ...args)` to create a component that will inherit one or more type. 
 
 * `type` must be a registered component type.
-* `args` will be passed to the `init` functions specified in the typedefs of various types.
+* `args` will be passed to the `init` functions specified in the typeDefs of various types.
 
 `create` returns only the component's public interface, defined with the `public` option and potentially custom builders that your component types provide. See below for details on builders.
 

@@ -2,7 +2,7 @@
 
 ## 0.1 - Core
 * Core: Async Message Channel
-  * see [@websh/remote-master-port](/packages/remote-master-port) and [@websh/remote-master-port](/packages/remote-slave-port)
+  * see [@websh/remote-master-port](/packages/remote-master-port) and [@websh/remote-slave-port](/packages/remote-slave-port)
 * Core: App Controler
   * see [src/app-controller.mjs](https://github.com/websh-org/shell/blob/master/src/app-controller.mjs) at [@websh/shell](https://github.com/websh-org/shell)
 * Core: JS Library For Apps
