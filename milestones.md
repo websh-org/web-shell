@@ -14,9 +14,13 @@
 
 ## 0.2 - Single App Shell
 * Single App Shell: Publish App Sandbox
+  * see [WebShell Sandbox](/sandbox) and [the source](https://github.com/websh-org/sandbox)
 * Single App Shell: Save/Open from local FS
+  * see [WebShell Sandbox](/sandbox) and [the source](https://github.com/websh-org/sandbox)
 * App: Example App - Textarea
+  * see the [Vanilla Example app]((https://github.com/websh-org/template-app-vanilla)) and [the Parcel Example app](https://github.com/websh-org/template-app-parcel)
 * App: Example App - Image viewer
+  * see the [Image Example app]((https://github.com/websh-org/app-example-image)
 
 ## 0.3 - Shell FS
 * Core: Secure message channel with JWT
