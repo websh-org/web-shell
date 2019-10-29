@@ -18,4 +18,3 @@ See the [list of NPM packages](packages) produced by the project.
 ## About
 * [About the WebShell Project](about)
 * [Milestones](milestones)
-
