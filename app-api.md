@@ -4,8 +4,6 @@
 
 This document describes the API that a webpage needs to implement to be considered a WebShell app. 
 
-This is distinct from the App Controller API, which is the API of the WebShell component that manages the connection to an WebShell app loaded in an iframe. 
-
 ## How it works
 
 The connection between the app (in a sandboxed iframe) and the shell (in the parent window) is established through an async-enabled
@@ -23,11 +21,16 @@ Commands, expected results, errors and events are defined in various app APIs.
 
 ````js
 WebShellApp.manifest({
-  String name,
+  V: "0",
+  String name, 
+  String short_name,
   String description,
   String version,
   String author,
-  String docs, // Documentation URL
+  String homepage,
+  String repository,
+  String bugs,
+  String author,
   String icon, // Icon url
   Object api: {
     ...
@@ -46,15 +49,14 @@ WebShellApp.command('test-echo', function ({ text }) {
   return { text }
 })
 ````
-Handler functions should return the results as described in each app API. If an error occurrs and the result can not be returned, an error should be thrown. Errors should be thrown using WebShellApp.throw:
+Handler functions should return the results as described in each app API. If an error occurrs and the result can not be returned, an error should be thrown. Errors should be thrown using `WebShellApp.throw`:
 ````js
 WebShellApp.throw(error,data);
 ````
 ## Errors
-Errors are described in each app API. In addition to those errors, the following may be thrown if more specific errors don't apply.
+Errors are described in each app API. In addition to those errors, the following may be thrown if no specific error applies.
 
 ````js
-Error "command-bad-arguments" { String reason }
 Error "command-not-allowed" { String reason }
 Error "command-failed" { String reason }
 Error "command-internal-error" { String reason }

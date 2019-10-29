@@ -3,10 +3,10 @@
 
 # WebShell Packages
 
+Webshell packages are namespaced under `@websh` on NPM.
+
 ## Shell-side
 * [@websh/remote-master-port](remote-master-port)
-* [@websh/factory](factory)
-* [@websh/bios](bios)
 
 ## App-side
 * [@websh/remote-slave-port](remote-slave-port)

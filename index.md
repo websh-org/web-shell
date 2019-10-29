@@ -1,9 +1,15 @@
-This project is in early development stages.
+***NOTE***: This project is in early development stages.
 
 Read [about the project](about).
 
+## Demo
+Visit the [WebShell Sandbox](https://websh.org/sandbox) too see WebShell in action.
+
+## Source
+Visit [WebShell's organization page](https://github.com/websh-org) on Github.
+
 ## Packages
-See the [list of packages](packages).
+See the [list of NPM packages](packages) produced by the project.
 
 ## Docs
 * [WebShell App API](app-api) - The API for WebShell apps.
@@ -12,3 +18,4 @@ See the [list of packages](packages).
 ## About
 * [About the WebShell Project](about)
 * [Milestones](milestones)
+
