@@ -1,3 +1,5 @@
 remote_theme: mmistakes/minimal-mistakes
 title: WebShell Docs
 description: Documentation for the WebShell project
+
+theme: jekyll-theme-cayman
