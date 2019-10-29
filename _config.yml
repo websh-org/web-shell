@@ -1,4 +1,4 @@
 title: WebShell Docs
 description: Documentation for the WebShell project
 
-theme: jekyll-theme-cayman
+remote_theme: mmistakes/minimal-mistakes
